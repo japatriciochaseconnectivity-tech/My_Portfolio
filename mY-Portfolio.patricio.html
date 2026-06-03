@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>John Aldrin Patricio | Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #081b29;
+            color: #eddcd2;
+        }
+
+        /* Header / Navbar */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 10%;
+            background: #081b29;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            border-bottom: 1px solid rgba(0, 238, 255, 0.1);
+        }
+
+        .logo {
+            font-size: 25px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .logo span {
+            color: #00eeff;
+        }
+
+        navbar a {
+            font-size: 16px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            margin-left: 35px;
+            transition: .3s;
+        }
+
+        navbar a:hover, navbar a.active {
+            color: #00eeff;
+        }
+
+        /* Section Settings */
+        section {
+            min-height: 100vh;
+            padding: 10rem 10% 2rem;
+        }
+
+        /* Home Section */
+        .home {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .home-content {
+            max-width: 600px;
+        }
+
+        .home-content h1 {
+            font-size: 56px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .home-content h3 {
+            font-size: 32px;
+            font-weight: 700;
+            color: #00eeff;
+            margin-bottom: 20px;
+        }
+
+        .home-content p {
+            font-size: 16px;
+            margin: 20px 0 40px;
+            color: #a2b5cd;
+        }
+
+        .btn-box {
+            display: flex;
+            justify-content: space-between;
+            width: 345px;
+            height: 50px;
+        }
+
+        .btn-box a {
+            position: relative;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 150px;
+            height: 100%;
+            background: #00eeff;
+            border: 2px solid #00eeff;
+            border-radius: 8px;
+            font-size: 16px;
+            color: #081b29;
+            text-decoration: none;
+            font-weight: 600;
+            letter-spacing: 1px;
+            z-index: 1;
+            transition: .5s;
+        }
+
+        .btn-box a:nth-child(2) {
+            background: transparent;
+            color: #00eeff;
+        }
+
+        .btn-box a:nth-child(2):hover {
+            color: #081b29;
+            background: #00eeff;
+        }
+
+        .btn-box a:hover {
+            box-shadow: 0 0 15px #00eeff;
+        }
+
+        /* Placeholder Avatar Image Style */
+        .avatar-placeholder {
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            border: 4px solid #00eeff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #0a233a;
+            box-shadow: 0 0 25px rgba(0, 238, 255, 0.2);
+            overflow: hidden;
+        }
+
+        .avatar-placeholder i {
+            font-size: 150px;
+            color: #00eeff;
+        }
+
+        /* About Section */
+        .about {
+            background: #0a2235;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .heading {
+            font-size: 45px;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .heading span {
+            color: #00eeff;
+        }
+
+        .about-content {
+            text-align: center;
+            max-width: 800px;
+        }
+
+        .about-content p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #a2b5cd;
+            margin-bottom: 2rem;
+        }
+
+        /* Journey / Resume Section */
+        .journey-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5rem;
+        }
+
+        .journey-column {
+            flex: 1 1 40rem;
+        }
+
+        .journey-column .title {
+            font-size: 25px;
+            margin: 0 0 1.5rem 2rem;
+        }
+
+        .journey-box {
+            border-left: 2px solid #00eeff;
+        }
+
+        .journey-content {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .journey-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -9px;
+            width: 16px;
+            height: 16px;
+            background: #00eeff;
+            border-radius: 50%;
+        }
+
+        .content {
+            padding: 1.5rem;
+            border: 1px solid #00eeff;
+            border-radius: 8px;
+            background: #0a233a;
+        }
+
+        .content .year {
+            font-size: 14px;
+            color: #00eeff;
+            margin-bottom: 0.5rem;
+        }
+
+        .content h3 {
+            font-size: 20px;
+            margin-bottom: 0.5rem;
+        }
+
+        .content p {
+            font-size: 14px;
+            color: #a2b5cd;
+        }
+
+        /* Skills Section */
+        .skills {
+            background: #0a2235;
+        }
+
+        .skills-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5rem;
+        }
+
+        .skills-column {
+            flex: 1 1 40rem;
+        }
+
+        .skills-column .title {
+            font-size: 25px;
+            margin-bottom: 1.5rem;
+        }
+
+        .skills-box .skills-content {
+            position: relative;
+            border: 1px solid #00eeff;
+            border-radius: 8px;
+            padding: 1.5rem;
+            background: #0a233a;
+        }
+
+        .skills-content .progress {
+            padding: 1rem 0;
+        }
+
+        .progress h3 {
+            font-size: 17px;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+
+        .progress h3 span {
+            color: #00eeff;
+        }
+
+        .progress .bar {
+            height: 10px;
+            border-radius: 4px;
+            background: #081b29;
+            border: 1px solid #00eeff;
+            position: relative;
+        }
+
+        .progress .bar span {
+            display: block;
+            height: 100%;
+            border-radius: 3px;
+            background: #00eeff;
+        }
+
+        /* Contact Section */
+        .contact form {
+            max-width: 70rem;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact form .input-box {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .contact form .input-box input,
+        .contact form textarea {
+            width: 100%;
+            padding: 1.5rem;
+            font-size: 16px;
+            color: #fff;
+            background: #0a233a;
+            border-radius: .8rem;
+            border: 1px solid #00eeff;
+            margin: 0.8rem 0;
+            resize: none;
+        }
+
+        .contact form .input-box input {
+            width: 49%;
+        }
+
+        .contact form .btn-box {
+            justify-content: center;
+            width: 100%;
+            margin-top: 1rem;
+        }
+
+        .contact form .btn-box button {
+            width: 150px;
+            height: 50px;
+            background: #00eeff;
+            border: 2px solid #00eeff;
+            border-radius: 8px;
+            font-size: 16px;
+            color: #081b29;
+            font-weight: 600;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: .5s;
+        }
+
+        .contact form .btn-box button:hover {
+            box-shadow: 0 0 15px #00eeff;
+        }
+
+        /* Footer */
+        footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 2rem 10%;
+            background: #081b29;
+            border-top: 1px solid rgba(0, 238, 255, 0.1);
+        }
+
+        footer .text p {
+            font-size: 14px;
+            color: #a2b5cd;
+        }
+
+        /* Responsive Layout */
+        @media (max-width: 768px) {
+            header { padding: 20px 5%; }
+            section { padding: 8rem 5% 2rem; }
+            .home { flex-direction: column-reverse; text-align: center; gap: 2rem; }
+            .home-content h1 { font-size: 40px; }
+            .btn-box { margin: 0 auto; }
+            .contact form .input-box input { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="#home" class="logo">John<span>.</span></a>
+        <navbar>
+            <a href="#home" class="active">Home</a>
+            <a href="#about">About</a>
+            <a href="#journey">Journey</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">Contact</a>
+        </navbar>
+    </header>
+
+    <section class="home" id="home">
+        <div class="home-content">
+            <h1>Hi, I'm John Aldrin</h1>
+            <h3>Computer Engineer</h3>
+            <p>Detail-driven Computer Engineering graduate with comprehensive experience across IT support, network troubleshooting, and field technical operations.</p>
+            <div class="btn-box">
+                <a href="#contact">Hire Me</a>
+                <a href="#contact">Let's Talk</a>
+            </div>
+        </div>
+        <div class="avatar-placeholder">
+            <i class="fa-solid fa-user-astronaut"></i>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <h2 class="heading">About <span>Me</span></h2>
+        <div class="avatar-placeholder" style="width:200px; height:200px; margin-bottom: 20px;">
+            <i class="fa-solid fa-user-gear" style="font-size: 80px;"></i>
+        </div>
+        <div class="about-content">
+            <h3>Computer Engineer!</h3>
+            <p>Skilled in hardware/software diagnostics, AutoCAD documentation, and technical data collection for electrical distribution systems. Committed to operational excellence, collaborative problem-solving, and the delivery of technical solutions for complex engineering challenges.</p>
+            <div class="btn-box" style="margin: 0 auto;">
+                <a href="#journey" style="width: 180px;">Read More</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="journey" id="journey">
+        <h2 class="heading">My <span>Journey</span></h2>
+        
+        <div class="journey-row">
+            <div class="journey-column">
+                <h3 class="title">Education</h3>
+                <div class="journey-box">
+                    <div class="journey-content">
+                        <div class="content">
+                            <div class="year"><i class="fa-solid fa-calendar-days"></i> Graduated: 2025</div>
+                            <h3>Bachelor of Science in Computer Engineering</h3>
+                            <p>Technological Institute of the Philippines - Manila</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="journey-column">
+                <h3 class="title">Experience</h3>
+                <div class="journey-box">
+                    <div class="journey-content">
+                        <div class="content">
+                            <div class="year"><i class="fa-solid fa-calendar-days"></i> Nov 2025 - Present</div>
+                            <h3>Field Engineer (Project-Based)</h3>
+                            <p>Meralco Industrial Engineering Corp. (MIESCOR)</p>
+                            <p style="font-size: 12px; margin-top: 5px;">Conduct field surveys to gather connectivity data, trace customer meters, and perform technical data collection.</p>
+                        </div>
+                    </div>
+                    <div class="journey-content">
+                        <div class="content">
+                            <div class="year"><i class="fa-solid fa-calendar-days"></i> 2023 - 2025</div>
+                            <h3>IT Support & Document Controller</h3>
+                            <p>Northridge East Manpower Company</p>
+                            <p style="font-size: 12px; margin-top: 5px;">Resolved hardware, software, and network issues. Managed AutoCAD tasks and administrative records.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="skills" id="skills">
+        <h2 class="heading">My <span>Skills</span></h2>
+        
+        <div class="skills-row">
+            <div class="skills-column">
+                <h3 class="title">Coding Skills</h3>
+                <div class="skills-box">
+                    <div class="skills-content">
+                        <div class="progress">
+                            <h3>Python <span>80%</span></h3>
+                            <div class="bar"><span style="width: 80%;"></span></div>
+                        </div>
+                        <div class="progress">
+                            <h3>HTML <span>90%</span></h3>
+                            <div class="bar"><span style="width: 90%;"></span></div>
+                        </div>
+                        <div class="progress">
+                            <h3>C++ <span>75%</span></h3>
+                            <div class="bar"><span style="width: 75%;"></span></div>
+                        </div>
+                        <div class="progress">
+                            <h3>Cisco (Routing & Switching) <span>85%</span></h3>
+                            <div class="bar"><span style="width: 85%;"></span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skills-column">
+                <h3 class="title">Professional Skills</h3>
+                <div class="skills-box">
+                    <div class="skills-content">
+                        <div class="progress">
+                            <h3>AutoCAD Documentation <span>85%</span></h3>
+                            <div class="bar"><span style="width: 85%;"></span></div>
+                        </div>
+                        <div class="progress">
+                            <h3>Network Troubleshooting <span>80%</span></h3>
+                            <div class="bar"><span style="width: 80%;"></span></div>
+                        </div>
+                        <div class="progress">
+                            <h3>PC & Mobile Repair <span>90%</span></h3>
+                            <div class="bar"><span style="width: 90%;"></span></div>
+                        </div>
+                        <div class="progress">
+                            <h3>Data Analytics <span>70%</span></h3>
+                            <div class="bar"><span style="width: 70%;"></span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <h2 class="heading">Contact <span>Me!</span></h2>
+        
+        <form action="#">
+            <div class="input-box">
+                <input type="text" placeholder="Full Name" required>
+                <input type="email" placeholder="Email Address" required>
+            </div>
+            <div class="input-box">
+                <input type="number" placeholder="Mobile Number">
+                <input type="text" placeholder="Email Subject">
+            </div>
+            <textarea name="message" cols="30" rows="10" placeholder="Your Message" required></textarea>
+            
+            <div class="btn-box">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </section>
+
+    <footer>
+        <div class="text">
+            <p>Copyright &copy; 2026 by John Aldrin | All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('navbar a');
+
+        window.onscroll = () => {
+            sections.forEach(sec => {
+                let top = window.scrollY;
+                let offset = sec.offsetTop - 150;
+                let height = sec.offsetHeight;
+                let id = sec.getAttribute('id');
+
+                if(top >= offset && top < offset + height) {
+                    navLinks.forEach(links => {
+                        links.classList.remove('active');
+                        document.querySelector('navbar a[href*=' + id + ']').classList.add('active');
+                    });
+                }
+            });
+        };
+    </script>
+</body>
+</html>
